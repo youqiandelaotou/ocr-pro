@@ -10,7 +10,7 @@ public class Loader {
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
             System.out.println("please enter 2 parameters: image url & type[basic/table]");
-            System.out.println("example: java -jar orc-pro.jar /Users/xuyi/Desktop/e.png basic ");
+            System.out.println("example: java -jar ocr-pro-1.0-SNAPSHOT.jar /Users/xuyi/Desktop/e.png table");
             return;
         }
         String path = args[0];
