@@ -16,7 +16,7 @@ public class Loader {
         }
         String path = args[0];
         String typeStr = args[1];
-        if (!typeStr.equals("table") && !typeStr.equals("normal")) {
+        if (!typeStr.equals("table")) {
             System.out.println("type should be in normal or table");
             return;
         }
