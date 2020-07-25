@@ -1,6 +1,5 @@
 package com.xy;
 
-import com.xy.requests.OcrNormalReq;
 import com.xy.requests.OcrTableReq;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,13 +34,9 @@ public class Loader {
                 System.out.println("result: " + tableResult);
                 break;
             case normal:
-                OcrNormalReq req = new OcrNormalReq();
-                String result = req.request(path);
-                System.out.println("result: " + result);
-                break;
+                throw new Exception("ocr type not support: " + type.name());
             case frequency:
-                // TODO
-                break;
+                throw new Exception("ocr type not support: " + type.name());
             default:
                 throw new Exception("ocr type not support: " + type.name());
         }
