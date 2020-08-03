@@ -31,7 +31,7 @@ public class OcrTableReq extends OrcBasicReq{
         HttpClient httpClient = new HttpClient();
         httpClient.executeMethod(postMethod);
         String result = new String(postMethod.getResponseBody(), "utf-8");
-        logger.info("TableOcrResponse: "  +  result);
+//        logger.info("TableOcrResponse: "  +  result);
         // step4 parse result
         TableOcrResponse resp;
         try {
@@ -41,11 +41,13 @@ public class OcrTableReq extends OrcBasicReq{
             e.printStackTrace();
             throw e;
         }
+        if (resp.getErrorCode() != 0){
+            throw new Exception("TableOcrResponse err: " + result);
+        }
         // step5 check ret code
         if (resp.getResult().getRetCode() != 3){
             throw new Exception("OcrTableReq return code: " + resp.getResult().getRetCode());
         }
         return resp.getResult().getResultData();
-
     }
 }

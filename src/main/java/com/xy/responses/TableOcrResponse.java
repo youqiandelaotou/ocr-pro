@@ -7,6 +7,10 @@ public class TableOcrResponse {
     private long logId;
     @JSONField(name = "result")
     private Result result;
+    @JSONField(name = "error_code")
+    private int errorCode;
+    @JSONField(name = "error_msg")
+    private String errorMsg;
 
     public static class Result{
         @JSONField(name = "result_data")
@@ -77,11 +81,29 @@ public class TableOcrResponse {
         this.result = result;
     }
 
+    public int getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     @Override
     public String toString() {
         return "TableOcrResponse{" +
                 "logId=" + logId +
                 ", result=" + result +
+                ", errorCode=" + errorCode +
+                ", errorMsg='" + errorMsg + '\'' +
                 '}';
     }
 }
