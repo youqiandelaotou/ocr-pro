@@ -8,6 +8,24 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 调用方式一
+ * https://aip.baidubce.com/rest/2.0/ocr/v1/general?access_token=24.f9ba9c5241b67688bb4adbed8bc91dec.2592000.1485570332.282335-8574074
+ *
+ *
+ *
+ * 调用方式二
+ * POST /rest/2.0/face/v1/detect HTTP/1.1
+ * accept-encoding: gzip, deflate
+ * x-bce-date: 2015-03-24T13:02:00Z
+ * connection: keep-alive
+ * accept: *
+ * host:aip.baidubce.com
+ * x-bce-request-id:73c4e74c-3101-4a00-bf44-fe246959c05e
+ * content-type:application/x-www-form-urlencoded
+ * authorization:bce-auth-v1/46bd9968a6194b4bbdf0341f2286ccce/2015-03-24T13:02:00Z/1800/host;x-bce-date/994014d96b0eb26578e039fa053a4f9003425da4bfedf33f4790882fb4c54903
+ */
+
 public abstract class OrcBasicReq implements OcrReq {
     private final Logger logger = LoggerFactory.getLogger(OrcBasicReq.class);
     private final String url = "https://aip.baidubce.com/oauth/2.0/token";
